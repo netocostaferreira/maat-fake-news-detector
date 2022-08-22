@@ -1,0 +1,1 @@
+{"recall/modelo_0)": 0.8769883351007424, "precision/modelo_0": 0.8969631236442517, "accuracy/modelo_0": 0.8890057864281957, "recall/modelo_SVM)": 0.8759278897136797, "precision/modelo_SVM": 0.8777895855472901, "accuracy/modelo_SVM": 0.8779589689637033, "recall/reg_log)": 0.8950159066808059, "precision/reg_log": 0.9134199134199135, "accuracy/reg_log": 0.9058390320883746}

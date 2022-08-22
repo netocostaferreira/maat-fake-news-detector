@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name=”viewport” content=”width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0″ />
+<title>Ma'at: você bem informado</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Varela" rel="stylesheet" />
+<link href= "{{ url_for('static', filename= 'css/default.css') }}" rel="stylesheet" type="text/css" media="all" />
+<link href="{{ url_for('static', filename= 'css/fonts.css')}}" rel="stylesheet" type="text/css" media="all" />
+
+
+<style> 
+#caixa {
+  border: 2px solid red;
+  padding: 10px;
+  border-radius: 15px;
+
+
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="logo">
+			<h1>DETECTOR DE FAKE NEWS</h1>
+
+		</div>
+		<div id="menu">
+			<ul>
+				<li class="active"><a href="http://lattes.cnpq.br/3469639319752593" target = '_blank' accesskey="1" title="">LATTES do desenvolvedor</a></li>
+				<li><a href="https://github.com/netocostaferreira/maat-fake-news-detector" target = '_blank' accesskey="2" title="">GITHUB DO PROJETO</a></li>
+				
+				
+			</ul>
+		</div>
+	</div>
+	</div>
+	<div id="banner">
+		<div class="container">
+			<div class="title">
+				<h2 style= "center;font-size:100px;">--&nbsp;&nbsp;&nbsp;MA'AT&nbsp;&nbsp;&nbsp;--</h2>
+				<span class="byline">FERRAMENTA BASEADA EM MACHINE LEARNING (90% de acurácia) E TÉCNICAS DE NLP (NATURAL LANGUAGE PROCESSING) PARA DETECÇÃO DE FAKE NEWS EM LÍNGUA INGLESA</span> </div>
+			<ul class="actions">
+				<li><a href="https://pt.wikipedia.org/wiki/Maat" target = '_blank' class="button"> <b>MA'AT: por quê o nome?</b></a></li>
+				<li><a href="https://www.cafehistoria.com.br/fake-news-na-historia/" target = '_blank' class="button"><b>Saiba mais sobre FAKE NEWS e como combatê-la</b></a></li>
+
+			</ul>
+		</div>
+	</div>
+
+    
+	<div id="page" class="container" >
+    
+<div class="title" style="height: 500px; width: 990px;">
+
+	  <h2>Por quê detectores de fake news são importantes?</h2>
+	  <p>
+		<p style="font-size:120%;" align="justify"> Um estudo realizado pela Universidade de Stanford com 7.804 estudantes -
+			<b>do ensino fundamental à faculdade</b> - apontou que, aproximadamente, <b>82%
+			dos participantes não sabem distinguir um conteúdo falso (FAKE) de uma
+			notícia real na internet</b>. A pesquisa comprova que, apesar de
+			os participantes serem <b>altamente conectados e entenderem de tecnologia </b>e
+			redes sociais, <b>não têm a noção necessária para avaliar a precisão, a
+			veracidade e a confiabilidade das matérias</b> noticiadas. Essa pesquisa, realizada com uma parcela da população americana, <b>reflete seu todo</b>. Dessa forma, <b>notícias falsas</b>, as quais são fortes <b>instrumentos de manipulação e controle social</b>, <b>DEVEM SER SEVERAMENTE COMBATIDAS.</b></p>
+		
+		<ul class="actions">
+			<li><a href="https://purl.stanford.edu/fv751yt5934" target= '_blank' class="button"><b>VEJA O ESTUDO</b></a></li>
+			<br><br><br>
+			<hr>
+			<p>
+			<h2>foco de nossas análises</h2>
+	  <span class="byline">ELEIÇÕES ESTADUNIDENSES - 2020</span> </div>
+	  	  
+		</ul>
+  </div>
+
+  <div id="featured">
+		<div class="container">
+        <img src="{{ url_for('static', filename= 'images/Fake_news.jpg')}}" width="900" height="300" />
+			<div class="title">
+				<h2>TEM UMA NOTÍCIA SOBRE AS ELEÇÕES ESTADUNIDENSES DE 2020?</h2>
+				<span class="byline">MA'AT classificará como FATO ou FAKE...</span> </div>
+				<form action="{{ url_for('predict')}}" method="POST">
+    	<textarea  id = "caixa" name="news" rows="6" cols="50" required="required" style="font-size: 14pt" placeholder="Cole a notícia em inglês aqui..." ></textarea>
+		<br> </br>
+        <button type="submit" class="btn btn-primary btn-block btn-large" style = "border-radius: 8px;background-color: #BDC3C7; color: black; font-size: 22px; padding: 12px 28px;">MA'AT, é fato ou fake?</button>
+    </div>
+
+    			<div class="results">
+        		
+        		{% if prediction == 'FAKE'%}
+        		<hr>
+        		<p style="color:#F2D7D5; font-size:320%;">Opa! Cuidado! Essa notícia tem {{prediction_prob}}% de probabilidade de ser FALSA</p>
+        		<hr>
+        		{% elif prediction == 'REAL'%}
+        		<hr>
+        		<p style="color:#F2D7D5; font-size:320%;">Ótimo! Essa notícia tem {{prediction_prob}}% de probabilidade de ser VERDADEIRA</p>
+        		<hr>
+        		{% endif %}
+        		
+        	</div>
+
+		    <ul class="actions">
+			<li><a href="{{ url_for('static', filename= 'pages/Page1.html') }}" target="_blank" class="button"><b>LINK RÁPIDO PARA NOTÍCIAS DE TESTE </b></a></li>
+				
+		</ul>
+
+        	
+	</div>
+
+    		</form>	
+				
+
+	</div>
+    
+    	   
+</div>
+<div id="copyright" class="container" style="height: 50px; width: 990px;">
+	<p style="color:#F2D7D5;font-size:16px;"><b>ATENÇÃO</b>: MA'AT foi treinado a partir de banco de dados contendo informações em língua inglesa sobre as eleições estadunidenses de 2020. <b>MA'AT não é recomendado para outro idioma ou outra situação</b>.</p>
+	<p style="color:##FDF2E9; font-size:16px; ">&copy; Dr. José Ribamar Costa Ferreira Neto | e-mail: netocostaferreira@gmail.com | Informações acadêmicas adicionais: <a href="https://scholar.google.com/citations?user=KpwuchcAAAAJ&hl=en" target='_blank'style="color:#AED6F1;">Google Scholar</a>.</p>
+</div>
+</body>
+</html>
