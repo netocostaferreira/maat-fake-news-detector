@@ -4,7 +4,7 @@
 <table>
 <tr>
 <td>
- MA'AT (nome da deusa egípcia da verdade, justiça, retidão e ordem) é uma ferramenta baseada em estratégias de NLP (Natural Language Processing) e machine learning, tendo por objetivo analisar e classificar notícias - <b>EM LÍNGUA INGLESA E ASSOCIADAS À ELEIÇÃO ESTADUNIDENSE DE 2020 (BIDEN vs TRUMP)</b> - como, potencialmente, 'verdadeiras' ou 'falsas'. MAAT foi treinado a partir de banco de dados balanceado, contendo, aproximadamente, 7000 instâncias de notícias verdadeiras ou falsas. Como output, o usuário recebe uma sentença classificando a notícia escrutinada e a probabilidade desse output estar correto.
+ MA'AT (nome da deusa egípcia da verdade, justiça, retidão e ordem) é uma ferramenta baseada em estratégias de NLP (Natural Language Processing) e machine learning, tendo por objetivo analisar e classificar notícias - <b>EM LÍNGUA INGLESA E ASSOCIADAS À ELEIÇÃO ESTADUNIDENSE DE 2016 (TRUMP vs CLINTON)</b> - como, potencialmente, 'verdadeiras' ou 'falsas'. MAAT foi treinado a partir de banco de dados balanceado, contendo, aproximadamente, 7000 instâncias de notícias verdadeiras ou falsas. Como output, o usuário recebe uma sentença classificando a notícia escrutinada e a probabilidade desse output estar correto.
 </td>
 </tr>
 </table>
